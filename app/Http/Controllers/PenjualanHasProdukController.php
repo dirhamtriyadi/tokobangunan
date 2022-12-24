@@ -63,6 +63,8 @@ class PenjualanHasProdukController extends Controller
 
             $harga = $produk->harga * $request->qty;
 
+            $validatedData['harga'] = $harga;
+
             PenjualanHasProduk::updateOrCreate(
                 [
                     'id' => $request->id
@@ -82,6 +84,8 @@ class PenjualanHasProdukController extends Controller
         }
 
         $harga = $produk->harga * $request->qty;
+
+        $validatedData['harga'] = $harga;
 
         PenjualanHasProduk::updateOrCreate(
             [
